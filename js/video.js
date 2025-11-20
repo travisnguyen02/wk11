@@ -52,11 +52,16 @@ audioButton.addEventListener("click", function()
 })
 
 // Audio Slider
-let audioslide = document.querySelector("#slider")
+let audioslide = document.querySelector("#slider");
+let audioInfo = document.querySelector("#volume");
+audioInfo.textContent = 100 + "%"; // defaults to 100 first
+
 slider.addEventListener("input", function()
 {
 	video.volume = slider.value / 100; // boom
 	console.log("New audio:", video.volume)
+
+	audioInfo.textContent = (video.volume * 100) + "%";
 })
 
 // Vintage Button
